@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storys Interactive Inc</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: #0a0a0a;
+    color: #e6edf3;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    width: 100%;
+    max-width: 900px;
+    padding: 45px 20px 20px;
+    text-align: center;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    animation: spin 24s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .company-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+  }
+
+  .tagline {
+    font-size: 0.85rem;
+    color: #8b949e;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  nav {
+    display: flex;
+    gap: 6px;
+    margin-top: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #1f2428;
+    padding-bottom: 16px;
+    width: 100%;
+  }
+
+  nav button {
+    background: transparent;
+    border: 1px solid transparent;
+    color: #8b949e;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 9px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-family: inherit;
+  }
+
+  nav button:hover {
+    color: #e6edf3;
+    background: #161b22;
+  }
+
+  nav button.active {
+    color: #0a0a0a;
+    background: #e6edf3;
+    font-weight: 600;
+  }
+
+  main {
+    flex: 1;
+    width: 100%;
+    max-width: 900px;
+    padding: 60px 20px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .page {
+    display: none;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+    width: 100%;
+  }
+
+  .page.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .page h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .page .sub {
+    color: #8b949e;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .page h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .page .coming {
+    color: #8b949e;
+    font-size: 1.05rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .page .role {
+    color: #8b949e;
+    font-size: 0.95rem;
+    margin-top: 6px;
+    letter-spacing: 1px;
+  }
+
+  footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    color: #484f58;
+    font-size: 0.8rem;
+    border-top: 1px solid #1f2428;
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <!-- Logo -->
+    <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="45" fill="white"/>
+      <path d="M50 15 
+               A 35 35 0 0 1 50 85
+               A 35 35 0 0 1 50 15
+               Z" fill="#0a0a0a"/>
+      <path d="M50 15
+               A 35 35 0 0 0 50 85
+               A 35 35 0 0 0 50 15
+               Z" fill="white"/>
+      <path d="M50 15
+               A 35 35 0 0 1 85 50
+               A 35 35 0 0 1 50 85
+               A 35 35 0 0 1 15 50
+               A 35 35 0 0 1 50 15
+               Z" fill="none" stroke="#0a0a0a" stroke-width="0"/>
+    </svg>
+
+    <div class="company-name">STORY INTERACTIVE INC</div>
+    <div class="tagline">Interactive Storytelling</div>
+
+    <nav>
+      <button class="active" onclick="showPage('home', this)">Home</button>
+      <button onclick="showPage('software', this)">Software</button>
+      <button onclick="showPage('games', this)">Games</button>
+      <button onclick="showPage('news', this)">News</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="page active">
+      <h1>Storys Interactive Inc</h1>
+      <p class="sub">Interactive Storytelling Studio</p>
+    </section>
+
+    <!-- SOFTWARE -->
+    <section id="software" class="page">
+      <h2>Software</h2>
+      <p class="coming">Coming Soon</p>
+    </section>
+
+    <!-- GAMES -->
+    <section id="games" class="page">
+      <h2>Games</h2>
+      <p class="coming">Coming Soon</p>
+    </section>
+
+    <!-- NEWS -->
+    <section id="news" class="page">
+      <h2>News</h2>
+      <p class="role">CEO</p>
+      <h1>Buster R Moon</h1>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Storys Interactive Inc. All rights reserved.
+  </footer>
+
+  <script>
+    function showPage(id, btn) {
+      // hide all pages
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      // show selected
+      document.getElementById(id).classList.add('active');
+      // update nav buttons
+      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+
+</body>
+  </html>
